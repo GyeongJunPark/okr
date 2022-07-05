@@ -1,16 +1,17 @@
 <template>
-  <Home />
+  <router-view></router-view>
 </template>
 
-<script>
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
 import Home from "./components/Home.vue";
 
-export default {
-  name: "App",
+@Options({
   components: {
     Home,
   },
-};
+})
+export default class App extends Vue {}
 </script>
 
 <style></style>

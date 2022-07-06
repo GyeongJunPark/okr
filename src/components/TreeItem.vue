@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 export default {
   name: "TreeItem", // necessary for self-reference
   props: {
@@ -42,12 +42,12 @@ export default {
       {{ model.name }}
       <span v-if="isFolder">[{{ isOpen ? "-" : "+" }}]</span>
     </div>
-    <ul v-show="isOpen" v-if="isFolder">
-      <!--
+    <ul v-show="isOpen" v-if="isFolder"> -->
+<!--
         A component can recursively render itself using its
         "name" option (inferred from filename if using SFC)
       -->
-      <TreeItem
+<!-- <TreeItem
         class="item"
         v-bind:key="model"
         v-for="model in model.children"
@@ -57,4 +57,4 @@ export default {
       <li class="add" @click="addChild">+</li>
     </ul>
   </li>
-</template>
+</template> -->

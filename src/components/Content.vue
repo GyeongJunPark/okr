@@ -1,16 +1,46 @@
-<template>
-  <a-layout class="main">
-    <a-layout-content class="content">home works ! </a-layout-content>
-  </a-layout>
-</template>
+<script>
+import TreeItem from "./TreeItem.vue";
 
-<script lang="ts">
+const treeData = {
+  name: "My Tree",
+  children: [
+    { name: "hello" },
+    { name: "wat" },
+    {
+      name: "child folder",
+      children: [
+        {
+          name: "child folder",
+          children: [{ name: "hello" }, { name: "wat" }],
+        },
+        { name: "hello" },
+        { name: "wat" },
+        {
+          name: "child folder",
+          children: [{ name: "hello" }, { name: "wat" }],
+        },
+      ],
+    },
+  ],
+};
+
 export default {
+  components: {
+    TreeItem,
+  },
   data() {
-    return {};
+    return {
+      treeData,
+    };
   },
 };
 </script>
+
+<template>
+  <ul>
+    <TreeItem class="item" :model="treeData"></TreeItem>
+  </ul>
+</template>
 
 <style scope>
 .main {
